@@ -12,6 +12,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/platform-Chrome%20%7C%20Brave%20%7C%20Edge-blue" alt="Platform">
   <img src="https://img.shields.io/badge/manifest-v3-green" alt="Manifest V3">
+  <img src="https://img.shields.io/badge/version-1.0.0-purple" alt="Version">
   <img src="https://img.shields.io/badge/license-MIT-lightgrey" alt="License">
 </p>
 
@@ -30,9 +31,34 @@
 
 ---
 
-## ✨ 功能介紹
+## 📥 安裝
 
-### 🔍 交易安全分析
+> **一般使用者** → 直接下載安裝包即可，不需要安裝任何開發工具。
+
+### 方式一：直接下載（推薦）
+
+1. 到 [Releases](https://github.com/ianbbbanian5476/web3-defense/releases) 頁面下載最新的 `chrome-mv3-prod.zip`
+2. 解壓縮到任意資料夾
+3. 打開瀏覽器 → 網址列輸入 `chrome://extensions/`
+4. 右上角開啟 **「開發人員模式」**
+5. 點 **「載入未封裝項目」** → 選擇解壓後的資料夾
+
+### 方式二：自行建置（開發者）
+
+```bash
+git clone https://github.com/ianbbbanian5476/web3-defense.git
+cd web3-defense
+npm install
+npx plasmo build
+```
+
+建置完成後，載入 `build/chrome-mv3-prod/` 資料夾即可。
+
+> 載入後工具列會出現紫色盾牌圖示 🛡️。
+
+---
+
+## ✨ 功能介紹
 
 在交易發送到區塊鏈之前，自動攔截並分析：
 
@@ -49,62 +75,11 @@
 | **零元轉帳詐騙** | 偵測交易記錄汙染攻擊 |
 | **高滑點保護** | 偵測沒有價格保護的兌換交易 |
 
-### 📊 信任網站白名單
+### 其他功能
 
-把你常用的安全網站（如 Uniswap、OpenSea）加入信任清單，這些網站會自動跳過檢查。
-
-### 📝 本地交易紀錄
-
-所有攔截和檢查結果都保存在你的電腦上，**不會上傳到任何伺服器**。
-
-### 🌐 完全本地運作
-
-除了查詢公開的合約安全資料外，所有分析都在你的瀏覽器內完成。你的交易資料、錢包地址**永遠不會離開你的電腦**。
-
----
-
-## 🚀 快速開始
-
-### 環境需求
-
-- Node.js 18+
-- 瀏覽器：Chrome / Brave / Edge（需支援 Manifest V3）
-
-### 安裝與建置
-
-```bash
-# 1. 下載專案
-git clone https://github.com/ianbbbanian5476/web3-defense.git
-cd web3-defense
-
-# 2. 安裝依賴
-npm install
-
-# 3. 建置擴充套件
-npx plasmo build
-```
-
-### 載入瀏覽器
-
-1. 打開瀏覽器 → 網址列輸入 `chrome://extensions/`
-2. 右上角開啟 **「開發人員模式」**
-3. 點左上角 **「載入未封裝項目」**
-4. 選擇 `build/chrome-mv3-prod/` 資料夾
-
-載入完成後，工具列會出現紫色盾牌圖示 🛡️。
-
----
-
-## 🧪 測試
-
-建置完成後，可以用內建的測試頁面來驗證各項功能：
-
-```bash
-# 啟動本地伺服器
-python3 -m http.server 8765
-```
-
-瀏覽器開啟 `http://localhost:8765/test.html`，點擊按鈕模擬各種詐騙情境。
+- **信任網站白名單**：將常用安全網站（如 Uniswap、OpenSea）加入清單，自動跳過檢查
+- **本地交易紀錄**：所有攔截結果保存在你的電腦上，不上傳任何伺服器
+- **完全本地運作**：交易資料、錢包地址永遠不會離開你的電腦
 
 ---
 
@@ -119,7 +94,7 @@ web3-defense/
 │   │   ├── goplus.ts          # GoPlus 合約安全 API
 │   │   ├── tenderly.ts        # Tenderly 交易模擬 API
 │   │   ├── chainalysis.ts     # Chainalysis 制裁檢查 API
-│   │   └── rpc.ts             # 鏈上 RPC 查詢（代幣名稱等）
+│   │   └── rpc.ts             # 鏈上 RPC 查詢（代幣名稱）
 │   ├── types.ts               # 共享型別定義
 │   ├── constants.ts           # 函數選擇器、已知代幣、風險閾值
 │   ├── parser.ts              # ABI 解碼 + 交易意圖分類
