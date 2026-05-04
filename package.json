@@ -1,0 +1,51 @@
+{
+  "name": "web3-defense",
+  "displayName": "Web3 Defense",
+  "version": "1.0.0",
+  "description": "金融風控資安擴充 - Web3 交易防禦 Chrome Extension",
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "dev": "plasmo dev",
+    "build": "plasmo build",
+    "package": "plasmo package"
+  },
+  "dependencies": {
+    "@plasmohq/storage": "^1.14.0",
+    "change-case": "^5.4.4",
+    "plasmo": "^0.90.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sharp": "^0.34.5",
+    "tailwindcss": "^3.4.19",
+    "viem": "^2.44.0"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.313",
+    "@types/react": "^18.3.28",
+    "@types/react-dom": "^18.3.7",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.3",
+    "typescript": "^5.8.3"
+  },
+  "manifest": {
+    "host_permissions": [
+      "<all_urls>"
+    ],
+    "permissions": [
+      "storage",
+      "alarms",
+      "notifications"
+    ],
+    "web_accessible_resources": [
+      {
+        "resources": [
+          "wd-interceptor.js"
+        ],
+        "matches": [
+          "<all_urls>"
+        ]
+      }
+    ]
+  }
+}

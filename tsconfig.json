@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Web3 Defense Extension",
+  "compilerOptions": {
+    "strict": false,
+    "skipLibCheck": true,
+    "target": "esnext",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "resolveJsonModule": true,
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "paths": {
+      "~*": [
+        "./*"
+      ]
+    }
+  },
+  "include": [
+    ".plasmo/index.d.ts",
+    "plasmo.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ]
+}

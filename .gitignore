@@ -1,0 +1,13 @@
+node_modules/
+build/
+.plasmo/
+.parcel-cache/
+dist/
+*.log
+.DS_Store
+*.save
+*.bak
+ui-*.png
+demo.html
+test.html
+tsconfig.tsbuildinfo
